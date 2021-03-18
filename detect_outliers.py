@@ -53,7 +53,7 @@ class Outliers:
         _, idx = self.remove_outliers()
         return self.df.drop(index=idx)
 
-    def find_out_std_dev_method(self, parm=2):
+    def find_out_3sigma_method(self, parm=3):
         """
         :return:
         """
