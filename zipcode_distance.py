@@ -19,7 +19,6 @@ class Distance_zipcode:
         return f_df
 
 
-
 # TEST DF
 # df = frame({'cus': [10, 11, 12], 'zip_code': ['59-700', '59-702', '52-200']})
 # x = Distance_zipcode(df).get_dist()
