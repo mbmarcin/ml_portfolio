@@ -16,9 +16,9 @@ class Distance_zipcode:
         f_df = frame(columns=['id', 'dist_km'])
         for index, row in self.df.iterrows():
             try:
-                f_df.loc[index] = [row[self.df.columns[0]], int(round(self.dist.query_postal_code(self.base, row[self.df.columns[1]])))]
+                f_df.loc[index] = [row[self.df.columns[0]], round(self.dist.query_postal_code(self.base, row[self.df.columns[1]]), 3)]
             except ValueError:
-                f_df.loc[index] = [row[self.df.columns[0]], ]
+                f_df.loc[index] = [row[self.df.columns[0]], '']
         return f_df
 
 
