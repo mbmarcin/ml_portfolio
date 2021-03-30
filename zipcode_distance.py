@@ -7,7 +7,7 @@ class Distance_zipcode:
     X
     """
 
-    def __init__(self, df_code, base_code='51-430'):
+    def __init__(self, df_code, base_code):
         self.df = df_code
         self.dist = pgeocode.GeoDistance('PL')
         self.base = base_code
@@ -17,6 +17,7 @@ class Distance_zipcode:
         for index, row in self.df.iterrows():
             f_df.loc[index] = [row['cus'], int(round(self.dist.query_postal_code(self.base, row['zip_code'])))]
         return f_df
+
 
 
 # TEST DF
