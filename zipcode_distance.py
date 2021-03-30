@@ -18,7 +18,7 @@ class Distance_zipcode:
             try:
                 f_df.loc[index] = [row[self.df.columns[0]], int(round(self.dist.query_postal_code(self.base, row[self.df.columns[1]])))]
             except ValueError:
-                f_df.loc[index] = 0
+                f_df.loc[index] = [row[self.df.columns[0]], ]
         return f_df
 
 
